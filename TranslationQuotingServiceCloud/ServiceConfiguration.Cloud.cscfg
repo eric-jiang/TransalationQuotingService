@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="TranslationQuotingServiceCloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="TranslationQuotingServiceWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=portalvhdsh5xmnfd2h4l2k;AccountKey=88GUT/lAc3V7xID39KLPJS4GIn3DLntD4askTz+nFhg/lcVXNwpnZJAZ0DvjhzAFEJJVQG9JrbHGmhyxPj1sFg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="jiange" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEBMUGaKxjVSJSpiTBE5JHKIwDQYJKoZIhvcNAQEBBQAEggEAVoJwO0HShSQKIZdCIIFqIGYw2pprgrApFHPPe7Z+KPMaSJn0NCAxw+zsyLjx8y/2u5nR2I5nR+8p+bScf4TERPG5Bu1OKo1/h5JrK0aPHv2n1qkfNeFkgxBbVFWnlwJrJH1OwYKnVTmyVL9dLGKf9GDpBX4+k35kWJre7ulpvsmEH4rC4O9eiL3WQnY5dZdW2J4GHE2rAR9lZr54FmefCLBmb1usSUS9vWRZlLfT/wugC2/7uwr1a8sK3DaDWQE8E0RgTkgVPdl1q3K4GXxr0g9hk9vr1un7LgABZUNC12YuZZP1ew0g7Ctake3eBoa14sirpyUxVUGS7eZFvWwgyzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCOx6Qn4HIBQgBAlsREbDRHm2JXxXletFscP" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2099-03-22T23:59:59.0000000+00:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="F3EC49A3CE0059CE1B2BB561E75BAF486921ACFB" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

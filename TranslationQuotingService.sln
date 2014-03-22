@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationQuotingService", "TranslationQuotingService\TranslationQuotingService.csproj", "{DF2372E1-B2CC-4F6C-9890-5A05C977AE27}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "TranslationQuotingServiceCloud", "TranslationQuotingServiceCloud\TranslationQuotingServiceCloud.ccproj", "{3833E202-DB12-4D7D-9F3C-B2D13ADACFE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationQuotingServiceWebRole", "TranslationQuotingServiceWebRole\TranslationQuotingServiceWebRole.csproj", "{DD3DE593-60CE-4FF9-9E0E-DBE400B5F7C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DF2372E1-B2CC-4F6C-9890-5A05C977AE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF2372E1-B2CC-4F6C-9890-5A05C977AE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF2372E1-B2CC-4F6C-9890-5A05C977AE27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3833E202-DB12-4D7D-9F3C-B2D13ADACFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3833E202-DB12-4D7D-9F3C-B2D13ADACFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3833E202-DB12-4D7D-9F3C-B2D13ADACFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3833E202-DB12-4D7D-9F3C-B2D13ADACFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3DE593-60CE-4FF9-9E0E-DBE400B5F7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3DE593-60CE-4FF9-9E0E-DBE400B5F7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3DE593-60CE-4FF9-9E0E-DBE400B5F7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3DE593-60CE-4FF9-9E0E-DBE400B5F7C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
