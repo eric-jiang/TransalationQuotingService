@@ -1,31 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-
-namespace TranslationQuotingService
+﻿namespace TranslationQuotingService
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
+    using System;
+    using DataContract;
+    using Business;
+    using Microsoft.Practices.Unity;
+    using System.ServiceModel;
+
     public class TranslationQuotingService : ITranslationQuotingService
     {
-        public string GetData(int value)
+        [Dependency]
+        public IManageQuote ManageQuote { get; set; }
+        
+        public QuoteReply GetQuote(QuoteRequest request)
         {
-            return string.Format("You entered: {0}", value);
-        }
+            if (request == null)
+            {
+                throw new ArgumentNullException("QuoteRequest");
+            }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
+            try
             {
-                throw new ArgumentNullException("composite");
+                var manageQuote = ManageQuote.InitializeQuote(request.Urgency, request.NumberOfWords, request.WorkType).CalculateQuotePrice();
+                return new QuoteReply { TotalPrice = manageQuote.Quote.TotalPrice, IncludeGst = manageQuote.Quote.IncludeGst };
             }
-            if (composite.BoolValue)
+            catch(ArgumentNullException ex)
             {
-                composite.StringValue += "Suffix";
+                throw new FaultException();
             }
-            return composite;
+
         }
     }
 }
