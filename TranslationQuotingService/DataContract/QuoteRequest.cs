@@ -6,9 +6,6 @@
     public class QuoteRequest
     {
         [DataMember]
-        public string CompletionDate { get; set; }
-
-        [DataMember]
         public int NumberOfWords { get; set; }
 
         [DataMember]
@@ -16,6 +13,5 @@
 
         [DataMember]
         public string WorkType { get; set; }
-
     }
 }

@@ -5,6 +5,7 @@
     using Business;
     using Microsoft.Practices.Unity;
     using System.ServiceModel;
+    using Microsoft.Practices.Unity.Utility;
 
     public class TranslationQuotingService : ITranslationQuotingService
     {
@@ -13,19 +14,16 @@
         
         public QuoteReply GetQuote(QuoteRequest request)
         {
-            if (request == null)
-            {
-                throw new ArgumentNullException("QuoteRequest");
-            }
-
             try
             {
+                ManageQuote.InitializeQuote(request.Urgency, request.NumberOfWords, request.WorkType);
+
                 var manageQuote = ManageQuote.InitializeQuote(request.Urgency, request.NumberOfWords, request.WorkType).CalculateQuotePrice();
                 return new QuoteReply { TotalPrice = manageQuote.Quote.TotalPrice, IncludeGst = manageQuote.Quote.IncludeGst };
             }
-            catch(ArgumentNullException ex)
+            catch(Exception ex)
             {
-                throw new FaultException();
+                throw new FaultException<string>(ex.Message, ex.Message);
             }
 
         }
