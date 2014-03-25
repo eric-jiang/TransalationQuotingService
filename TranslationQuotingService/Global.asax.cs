@@ -3,14 +3,40 @@
     using System;
     using Microsoft.Practices.Unity;
     using Business;
-    
-    public class Global : System.Web.HttpApplication
+
+    public interface IContainerAccessor
     {
+        IUnityContainer Container { get; }
+    }
+
+    public class Global : System.Web.HttpApplication, IContainerAccessor
+    {
+        private static IUnityContainer container;
+        public static IUnityContainer Container
+        {
+            get
+            {
+                return container;
+            }
+            private set
+            {
+                container = value;
+            }
+        }
+
+        IUnityContainer IContainerAccessor.Container
+        {
+            get
+            {
+                return Container;
+            }
+        }
 
         protected void Application_Start(object sender, EventArgs e)
         {
             IUnityContainer container = new UnityContainer();
             container.RegisterType<IManageQuote, ManageQuote>();
+            Container = container;
         }
 
         protected void Session_Start(object sender, EventArgs e)
